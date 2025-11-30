@@ -1,0 +1,79 @@
+.gesture-menu {
+  padding: var(--spacing-md);
+  border-radius: 12px;
+}
+
+.gesture-menu h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.gesture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.gesture-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.gesture-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--neon-pink);
+}
+
+.gesture-btn.active {
+  border-color: var(--neon-pink);
+  background: rgba(255, 0, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.gesture-emoji {
+  font-size: 2rem;
+}
+
+.gesture-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.gesture-btn.active .gesture-label {
+  color: var(--neon-pink);
+}
+
+.gesture-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--neon-pink);
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+@media (max-width: 768px) {
+  .gesture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gesture-emoji {
+    font-size: 1.5rem;
+  }
+}
+
+

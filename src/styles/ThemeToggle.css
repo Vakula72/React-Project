@@ -1,0 +1,77 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.toggle-btn {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  border-radius: 14px;
+  border: 2px solid var(--neon-cyan);
+  background: rgba(0, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.toggle-btn:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.toggle-slider {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.toggle-icon {
+  position: absolute;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-icon:first-child {
+  left: 6px;
+  opacity: 1;
+}
+
+.toggle-icon:last-child {
+  right: 6px;
+  opacity: 0.5;
+}
+
+.toggle-btn.light .toggle-icon:first-child {
+  opacity: 0.5;
+}
+
+.toggle-btn.light .toggle-icon:last-child {
+  opacity: 1;
+}
+
+.theme-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .theme-label {
+    font-size: 0.75rem;
+  }
+}
+
+

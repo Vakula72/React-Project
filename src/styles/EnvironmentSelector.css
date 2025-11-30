@@ -1,0 +1,85 @@
+.environment-selector {
+  padding: var(--spacing-md);
+  border-radius: 12px;
+}
+
+.environment-selector h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.environment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.env-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.env-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--neon-blue);
+}
+
+.env-btn.active {
+  border-color: var(--neon-blue);
+  background: rgba(0, 128, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 128, 255, 0.3);
+}
+
+.env-icon {
+  font-size: 1.8rem;
+}
+
+.env-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.env-btn.active .env-label {
+  color: var(--neon-blue);
+}
+
+.env-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+@media (max-width: 1024px) {
+  .environment-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .environment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .env-icon {
+    font-size: 1.5rem;
+  }
+}
+
+

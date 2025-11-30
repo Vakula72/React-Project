@@ -1,0 +1,79 @@
+.expression-menu {
+  padding: var(--spacing-md);
+  border-radius: 12px;
+}
+
+.expression-menu h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.expression-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.expression-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.expression-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--neon-cyan);
+}
+
+.expression-btn.active {
+  border-color: var(--neon-cyan);
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.expression-emoji {
+  font-size: 2rem;
+}
+
+.expression-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.expression-btn.active .expression-label {
+  color: var(--neon-cyan);
+}
+
+.expression-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+@media (max-width: 768px) {
+  .expression-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expression-emoji {
+    font-size: 1.5rem;
+  }
+}
+
+
