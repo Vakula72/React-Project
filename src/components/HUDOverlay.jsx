@@ -4,7 +4,7 @@ import { useStore } from '../store/useStore'
 import '../styles/HUDOverlay.css'
 
 const HUDOverlay = () => {
-  const { currentAnimation, currentExpression, currentGesture, isListening } = useStore()
+  const { currentAnimation, currentExpression, currentGesture, isListening, isTalking } = useStore()
 
   return (
     <div className="hud-overlay">
@@ -37,6 +37,16 @@ const HUDOverlay = () => {
           >
             <span className="hud-label">Voice:</span>
             <span className="hud-value neon-green">Listening...</span>
+          </motion.div>
+        )}
+        {isTalking && (
+          <motion.div
+            className="hud-status-item"
+            animate={{ opacity: [1, 0.5, 1] }}
+            transition={{ duration: 0.8, repeat: Infinity }}
+          >
+            <span className="hud-label">Status:</span>
+            <span className="hud-value neon-pink">Talking...</span>
           </motion.div>
         )}
       </motion.div>

@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useStore } from '../store/useStore'
 import ThemeToggle from './ThemeToggle'
 import '../styles/Layout.css'
 
 const Layout = ({ children }) => {
   const location = useLocation()
+  const { theme } = useStore()
+
+  // Apply theme to body element
+  useEffect(() => {
+    document.body.className = theme === 'dark' ? 'dark-theme' : 'light-theme'
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
 
   const navItems = [
     { path: '/', label: 'Home' },

@@ -4,17 +4,19 @@ import { useStore } from '../store/useStore'
 import '../styles/VoiceControls.css'
 
 const VoiceControls = () => {
-  const { isListening, setIsListening } = useStore()
+  const { isListening, setIsListening, isTalking, setIsTalking } = useStore()
   const [isProcessing, setIsProcessing] = useState(false)
 
   const toggleListening = () => {
     if (isListening) {
-      // Stop listening
+      // Stop listening and talking
       setIsListening(false)
+      setIsTalking(false)
       setIsProcessing(false)
     } else {
       // Start listening
       setIsListening(true)
+      setIsTalking(true) // Start talking animation
       
       // Simulate voice recognition
       setTimeout(() => {
@@ -23,6 +25,7 @@ const VoiceControls = () => {
         setTimeout(() => {
           setIsProcessing(false)
           setIsListening(false)
+          setIsTalking(false) // Stop talking animation
         }, 2000)
       }, 500)
     }

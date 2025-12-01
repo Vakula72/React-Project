@@ -61,6 +61,145 @@
   font-style: italic;
 }
 
+/* Appearance Controls */
+.control-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.color-picker {
+  width: 100%;
+  height: 40px;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.color-picker:hover {
+  border-color: rgba(0, 255, 255, 0.6);
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+.rotation-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.rotation-axis {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.rotation-axis span {
+  min-width: 60px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.rotation-axis .slider {
+  flex: 1;
+}
+
+.accessory-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.toggle-label:hover {
+  color: var(--neon-cyan);
+}
+
+.toggle-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--neon-cyan);
+}
+
+.reset-button {
+  width: 100%;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  background: rgba(255, 87, 87, 0.1);
+  border: 2px solid rgba(255, 87, 87, 0.3);
+  border-radius: 8px;
+  color: #ff5757;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.reset-button:hover {
+  background: rgba(255, 87, 87, 0.2);
+  border-color: rgba(255, 87, 87, 0.5);
+  box-shadow: 0 0 15px rgba(255, 87, 87, 0.3);
+}
+
 @media (max-width: 1024px) {
   .customize-layout {
     grid-template-columns: 1fr;

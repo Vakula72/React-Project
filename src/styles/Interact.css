@@ -51,6 +51,85 @@
   }
 }
 
+/* Focus Mode Styles */
+.avatar-container.focus-mode {
+  position: relative;
+  z-index: 100;
+}
+
+.avatar-scene-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.avatar-scene-container.focus-mode {
+  cursor: default;
+}
+
+.focus-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.focus-hint {
+  pointer-events: none; /* Hint text doesn't block clicks */
+}
+
+.avatar-scene-container {
+  position: relative;
+}
+
+.avatar-scene-container canvas {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.focus-hint {
+  padding: 1rem 2rem;
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  color: var(--neon-cyan);
+  font-size: 0.9rem;
+  font-weight: 500;
+  pointer-events: none;
+  text-align: center;
+  animation: pulse 2s ease-in-out infinite;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme .focus-hint {
+  background: rgba(0, 102, 204, 0.15);
+  border: 2px solid rgba(0, 102, 204, 0.4);
+  color: #0066cc;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
 @media (max-width: 768px) {
   .interact-page {
     padding: var(--spacing-sm);
@@ -62,6 +141,11 @@
 
   .avatar-container {
     min-height: 400px;
+  }
+
+  .focus-hint {
+    font-size: 0.8rem;
+    padding: 0.75rem 1.5rem;
   }
 }
 
